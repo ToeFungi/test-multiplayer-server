@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from 'express'
 import socketIO from 'socket.io'
 
@@ -10,6 +11,7 @@ const fps = process.env.SET_FPS || 25
 const port = process.env.SERVER_PORT || 3001
 
 const app = express()
+app.use(cors())
 
 const server = createServer(app)
 const io = socketIO(server)

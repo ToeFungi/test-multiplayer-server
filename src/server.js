@@ -8,18 +8,16 @@ import { PlayerController } from './PlayerController'
 import { BulletController } from './BulletController'
 
 const fps = process.env.SET_FPS || 25
-const port = process.env.SERVER_PORT || 3001
+const port = process.env.PORT || 3001
 
-const app = express()
-app.use(cors())
+const server = express()
+  .use(cors())
+  .listen(port, () => console.log(`Server listening on port ${port}`))
 
-const server = createServer(app)
 const io = socketIO(server)
 
 const playerController = new PlayerController()
 const bulletController = new BulletController()
-
-server.listen(port, () => console.log(`Server listening on port ${port}`))
 
 // On connection to the server
 io.on('connection', socket => {

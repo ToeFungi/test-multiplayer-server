@@ -6,10 +6,22 @@ module.exports = {
   resolve: {
     extensions: [
       '.js',
-      '.json'
+      '.json',
+      '*'
+    ]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'babel-loader'
+      }
     ]
   },
   target: 'node',
+  externals: {
+    uws: "uws"
+  },
   output: {
     filename: 'index.js',
     libraryTarget: 'commonjs',

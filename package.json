@@ -4,22 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/server.js",
+    "dev:start": "nodemon --exec babel-node src/server.js",
+    "start": "node -r @babel/register src/server.js",
     "test": "mocha"
   },
   "author": "Alex Pickering",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "4.17.1",
+    "cors": "2.8.5",
     "node": "14.0.0",
+    "uws": "10.148.1",
     "nodemon": "1.19.4",
+    "express": "4.17.1",
     "socket.io": "2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
     "@babel/core": "7.6.4",
     "@babel/node": "7.6.3",
+    "@babel/register": "7.9.0",
     "@babel/preset-env": "7.6.3",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11"

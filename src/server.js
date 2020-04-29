@@ -12,6 +12,7 @@ const port = process.env.PORT || 3001
 
 const server = express()
   .use(cors())
+  .get('/health', (req, res) => res.send(`Healthy on port ${port}`))
   .listen(port, () => console.log(`Server listening on port ${port}`))
 
 const io = socketIO(server)

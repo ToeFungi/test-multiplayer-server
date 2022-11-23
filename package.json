@@ -22,7 +22,7 @@
     "uws": "10.148.1",
     "nodemon": "1.19.4",
     "express": "4.17.1",
-    "socket.io": "2.3.0",
+    "socket.io": "2.5.0",
     "@babel/register": "7.9.0"
   }
 }
